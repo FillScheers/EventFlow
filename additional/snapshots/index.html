@@ -1,0 +1,1224 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://example.com/additional/snapshots/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Snapshots - EventFlow</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#snapshots" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="EventFlow" class="md-header__button md-logo" aria-label="EventFlow" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EventFlow
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Snapshots
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="EventFlow" class="md-nav__button md-logo" aria-label="EventFlow" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    EventFlow
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Additional
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Additional" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Additional
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../customize/" class="md-nav__link">
+        Customize
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dos-and-donts/" class="md-nav__link">
+        Dos and don't
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Snapshots
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Snapshots
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#snapshot-strategy" class="md-nav__link">
+    Snapshot strategy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrading-snapshots" class="md-nav__link">
+    Upgrading snapshots
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snapshot-store-implementations" class="md-nav__link">
+    Snapshot store implementations
+  </a>
+  
+    <nav class="md-nav" aria-label="Snapshot store implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#null-or-none" class="md-nav__link">
+    Null (or none)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-memory" class="md-nav__link">
+    In-memory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-sql-server" class="md-nav__link">
+    Microsoft SQL Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Microsoft SQL Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-and-migrate-required-mssql-databases" class="md-nav__link">
+    Create and migrate required MSSQL databases
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom" class="md-nav__link">
+    Custom
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../specifications/" class="md-nav__link">
+        Specifications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../value-objects/" class="md-nav__link">
+        Value objects
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Basics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Basics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Basics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/" class="md-nav__link">
+        Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/aggregates/" class="md-nav__link">
+        Aggregates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/commands/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/event-upgrade/" class="md-nav__link">
+        Event upgrade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/identity/" class="md-nav__link">
+        Identity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/jobs/" class="md-nav__link">
+        Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/metadata/" class="md-nav__link">
+        Metadata
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/queries/" class="md-nav__link">
+        Queries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/sagas/" class="md-nav__link">
+        Sagas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/subscribers/" class="md-nav__link">
+        Aggregates
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Integration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Integration" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/" class="md-nav__link">
+        Integration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/event-stores/" class="md-nav__link">
+        Integration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/mongodb/" class="md-nav__link">
+        MongoDB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/mssql/" class="md-nav__link">
+        Microsoft SQL Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/postgresql/" class="md-nav__link">
+        PostgreSQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/rabbitmq/" class="md-nav__link">
+        RabbitMQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/read-stores/" class="md-nav__link">
+        Read stores
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#snapshot-strategy" class="md-nav__link">
+    Snapshot strategy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrading-snapshots" class="md-nav__link">
+    Upgrading snapshots
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snapshot-store-implementations" class="md-nav__link">
+    Snapshot store implementations
+  </a>
+  
+    <nav class="md-nav" aria-label="Snapshot store implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#null-or-none" class="md-nav__link">
+    Null (or none)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-memory" class="md-nav__link">
+    In-memory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-sql-server" class="md-nav__link">
+    Microsoft SQL Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Microsoft SQL Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-and-migrate-required-mssql-databases" class="md-nav__link">
+    Create and migrate required MSSQL databases
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom" class="md-nav__link">
+    Custom
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="snapshots">Snapshots</h1>
+<p>When working with long-lived aggregates, performance when loading
+aggregates, and thereby making changes to them, becomes a real concern.
+Consider aggregates that are comprised of several thousands of events,
+some of which needs to go through a rigorous
+<a href="../../basics/event-upgrade/">update</a> process before they are applied to the
+aggregates.</p>
+<p>EventFlow supports aggregate snapshots, which is basically a capture of
+the entire aggregate state every few events. So instead of loading the
+entire aggregate event history, the latest snapshot is loaded, then
+applied to the aggregate and then the remaining events that were not
+captured in the snapshot.</p>
+<p>To configure an aggregate root to support snapshots, inherit from
+<code>SnapshotAggregateRoot&lt;,,&gt;</code> and define a serializable snapshot type
+that is marked with the <code>ISnapshot</code> interface.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="na">[SnapshotVersion(&quot;user&quot;, 1)]</span><span class="w"></span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UserSnapshot</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ISnapshot</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UserAggregate</span><span class="w"> </span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">SnapshotAggregateRoot</span><span class="p">&lt;</span><span class="n">UserAggregate</span><span class="p">,</span><span class="w"> </span><span class="n">UserId</span><span class="p">,</span><span class="w"> </span><span class="n">UserSnapshot</span><span class="p">&gt;</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">Task</span><span class="p">&lt;</span><span class="n">UserSnapshot</span><span class="p">&gt;</span><span class="w"> </span><span class="n">CreateSnapshotAsync</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">cancellationToken</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Create a UserSnapshot based on the current aggregate state</span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">LoadSnapshotAsync</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">UserSnapshot</span><span class="w"> </span><span class="n">snapshot</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">ISnapshotMetadata</span><span class="w"> </span><span class="n">metadata</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">cancellationToken</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Load the UserSnapshot into the current aggregate</span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>When using aggregate snapshots there are several important details to
+remember</p>
+<ul>
+<li>Aggregates must not make any assumptions regarding the existence of
+   snapshots</li>
+<li>Aggregates must not assume that snapshots are created with increasing
+   aggregate sequence numbers</li>
+<li>Snapshots must be created in such a way, that they represent the
+   entire history up to the point of snapshot creation</li>
+</ul>
+<h2 id="snapshot-strategy">Snapshot strategy</h2>
+<p>When implementing an aggregate root that inherits from
+<code>SnapshotAggregateRoot&lt;,,&gt;</code>, you need to pass the base class an
+implementation of <code>ISnapshotStrategy</code>. The strategy is used to
+determine when a snapshot should be created, e.g. every 100 events.</p>
+<p>EventFlow ships with two that should be enough for most purposes as they
+can be configured.</p>
+<ul>
+<li><code>SnapshotEveryFewVersionsStrategy:</code> Snapshots are created after a
+   predefined number of events, the default is <code>100</code>, but another
+   frequency can be specified</li>
+<li><code>SnapshotRandomlyStrategy:</code> Snapshots are created randomly with a
+   predefined chance, the default is <code>1%</code>, but another can be
+   specified</li>
+</ul>
+<h2 id="upgrading-snapshots">Upgrading snapshots</h2>
+<p>As an application grows over time, the data required to be stored within
+a snapshot will change. Either because some become obsolete or merely
+because a better way of storing the aggregate state is found. If this
+happens, the snapshots persisted in the snapshot store could potentially
+become useless as aggregates are unable to apply them. The easy solution
+would be to make change-by-addition and make sure that the old snapshots
+can be deserialized into the new version.</p>
+<p>EventFlow provides an alternative solution, which is basically allowing
+developers to upgrade snapshots similar to how <a href="../../basics/event-upgrade/">events are
+upgraded</a>.</p>
+<p>Lets say we have an application that has developed three snapshot
+versions over time.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="na">[SnapshotVersion(&quot;user&quot;, 1)]</span><span class="w"></span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UserSnapshotV1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ISnapshot</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="na">[SnapshotVersion(&quot;user&quot;, 2)]</span><span class="w"></span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UserSnapshotV2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ISnapshot</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="na">[SnapshotVersion(&quot;user&quot;, 3)]</span><span class="w"></span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UserSnapshot</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ISnapshot</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>Note how version three of the <code>UserAggregate</code> snapshot is called
+<code>UserSnapshot</code> and not <code>UserSnapshotV3</code>, its basically to help
+developers tell which snapshot version is the current one.</p>
+<p>Remember to add the <code>[SnapshotVersion]</code> attribute as it enables
+control of the snapshot definition name. If left out, EventFlow will
+make a guess, which will be tied to the name of the class type.</p>
+<p>The next step will be to implement upgraders, or mappers, that can
+upgrade one snapshot to another.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UserSnapshotV1ToV2Upgrader</span><span class="w"> </span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">ISnapshotUpgrader</span><span class="p">&lt;</span><span class="n">UserSnapshotV1</span><span class="p">,</span><span class="w"> </span><span class="n">UserSnapshotV2</span><span class="p">&gt;</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="p">&lt;</span><span class="n">UserSnapshotV2</span><span class="p">&gt;</span><span class="w"> </span><span class="n">UpgradeAsync</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">UserSnapshotV1</span><span class="w"> </span><span class="n">userSnapshotV1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">cancellationToken</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Map from V1 to V2 and return</span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UserSnapshotV2ToV3Upgrader</span><span class="w"> </span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">ISnapshotUpgrader</span><span class="p">&lt;</span><span class="n">UserSnapshotV2</span><span class="p">,</span><span class="w"> </span><span class="n">UserSnapshot</span><span class="p">&gt;</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="p">&lt;</span><span class="n">UserSnapshot</span><span class="p">&gt;</span><span class="w"> </span><span class="n">UpgradeAsync</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">UserSnapshotV2</span><span class="w"> </span><span class="n">userSnapshotV2</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">cancellationToken</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Map from V2 to V3 and return</span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>The snapshot types and upgraders then only needs to be registered in
+EventFlow.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">resolver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">EventFlowOptions</span><span class="p">.</span><span class="n">New</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// ...</span>
+<span class="w">  </span><span class="p">.</span><span class="n">AddSnapshotUpgraders</span><span class="p">(</span><span class="n">myAssembly</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="n">AddSnapshots</span><span class="p">(</span><span class="n">myAssembly</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// ...</span>
+<span class="w">  </span><span class="p">.</span><span class="n">CreateResolver</span><span class="p">();</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>Now, whenever a snapshot is loaded from the snapshot store, it is
+automatically upgraded to the latest version and the aggregate only
+needs to concern itself with the latest version.</p>
+<h2 id="snapshot-store-implementations">Snapshot store implementations</h2>
+<p>EventFlow has built-in support for some snapshot stores (more <em>will</em> be
+implemented).</p>
+<h3 id="null-or-none">Null (or none)</h3>
+<p>The default implementation used by EventFlow does absolutely nothing
+besides logging a warning if used. It exists only to help developers to
+select a proper snapshot store. Making in-memory the default
+implementation could present problems if snapshots were configured, but
+the snapshot store configuration forgotten.</p>
+<h3 id="in-memory">In-memory</h3>
+<p>For testing, or small applications, the in-memory snapshot store is
+configured by merely calling <code>UseInMemorySnapshotStore()</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">resolver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">EventFlowOptions</span><span class="p">.</span><span class="n">New</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// ...</span>
+<span class="w">  </span><span class="p">.</span><span class="n">UseInMemorySnapshotStore</span><span class="p">()</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// ...</span>
+<span class="w">  </span><span class="p">.</span><span class="n">CreateResolver</span><span class="p">();</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h3 id="microsoft-sql-server">Microsoft SQL Server</h3>
+<p>To use the MSSQL snapshot store you need to install the NuGet package
+<code>EventFlow.MsSql</code>.</p>
+<h4 id="configuration">Configuration</h4>
+<p>Configure the MSSQL connection and snapshot store as shown here.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">rootResolver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">EventFlowOptions</span><span class="p">.</span><span class="n">New</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// ...</span>
+<span class="w">  </span><span class="p">.</span><span class="n">ConfigureMsSql</span><span class="p">(</span><span class="n">MsSqlConfiguration</span><span class="p">.</span><span class="n">New</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="n">SetConnectionString</span><span class="p">(</span><span class="s">@&quot;Server=.\SQLEXPRESS;Database=MyApp;User Id=sa;Password=???&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="n">UseMsSqlSnapshotStore</span><span class="p">()</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// ...</span>
+<span class="w">  </span><span class="p">.</span><span class="n">CreateResolver</span><span class="p">();</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>Note that if you already use MSSQL for event- or read model store, you
+only need to invoke the <code>ConfigureMsSql</code> extension <em>once</em>.</p>
+<h4 id="create-and-migrate-required-mssql-databases">Create and migrate required MSSQL databases</h4>
+<p>Before you can use the MSSQL snapshot store, the required database and
+tables must be created. The database specified in your MSSQL connection
+<em>will not</em> be automatically created, you have to do this yourself.</p>
+<p>To make EventFlow create the required tables, execute the following
+code.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">msSqlDatabaseMigrator</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">rootResolver</span><span class="p">.</span><span class="n">Resolve</span><span class="p">&lt;</span><span class="n">IMsSqlDatabaseMigrator</span><span class="p">&gt;();</span><span class="w"></span>
+<span class="n">EventFlowSnapshotStoresMsSql</span><span class="p">.</span><span class="n">MigrateDatabase</span><span class="p">(</span><span class="n">msSqlDatabaseMigrator</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>You should do this either on application start or preferably upon
+application install or update, e.g., when the web site is installed.</p>
+<h3 id="custom">Custom</h3>
+<p>If none of the above stores are adequate, a custom implementation is
+possible by implementing the interface <code>ISnapshotPersistence</code>.
+However, there are some rules that the snapshot persistence store <em>must</em>
+follow.</p>
+<ul>
+<li>Its valid to store snapshots in any order, e.g. first version 3 then 2</li>
+<li>Its valid to overwrite existing snapshots version, e.g. storing
+   version 3 then version 3 again</li>
+<li>Fallback to old snapshots is allowed</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../faq/" class="md-footer__link md-footer__link--prev" aria-label="Previous: FAQ" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              FAQ
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../specifications/" class="md-footer__link md-footer__link--next" aria-label="Next: Specifications" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Specifications
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>
